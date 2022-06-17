@@ -1,20 +1,23 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import {
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input as ChackraInput,
   InputProps as ChackraInputProps
 } from "@chakra-ui/react";
+import { FieldError } from "react-hook-form";
 
 interface InputProps extends ChackraInputProps {
   name: string;
   label?: string;
+  error: FieldError;
 }
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> 
-  = ({ name, label, ...rest }, ref) => {
+  = ({ name, label, error, ...rest }, ref) => {
   return (
-    <FormControl>
+    <FormControl isInvalid={!!error}>
       { !!label && <FormLabel htmlFor={name}>{label}</FormLabel> }
 
       <ChackraInput
@@ -30,6 +33,12 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps>
         ref={ref}
         {...rest}
       />
+
+      { !!error && (
+        <FormErrorMessage>
+          {error.message}
+        </FormErrorMessage>
+      ) }
     </FormControl>
   );
 }
