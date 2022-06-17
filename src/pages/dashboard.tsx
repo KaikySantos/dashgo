@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { ApexOptions } from "apexcharts";
+import { useEffect, useState } from "react";
 
 const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false,
@@ -61,6 +62,12 @@ const series = [
 ];
 
 export default function Dashboard() {
+  const [showCart, setShowCart] = useState(false);
+
+  useEffect(() => {
+    setShowCart(true);
+  }, []);
+
   return (
     <Flex
       direction="column"
@@ -80,12 +87,14 @@ export default function Dashboard() {
           >
             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
 
-            <Chart
-              options={options}
-              series={series}
-              type="area"
-              height={160}
-            />
+            {showCart && (
+              <Chart
+                options={options}
+                series={series}
+                type="area"
+                height={160}
+              />
+            )}
           </Box>
           <Box
             p={["6", "8"]}
@@ -95,12 +104,14 @@ export default function Dashboard() {
           >
             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
 
-            <Chart
-              options={options}
-              series={series}
-              type="area"
-              height={160}
-            />
+            {showCart && (
+              <Chart
+                options={options}
+                series={series}
+                type="area"
+                height={160}
+              />
+            )}
           </Box>
         </SimpleGrid>
       </Flex>
