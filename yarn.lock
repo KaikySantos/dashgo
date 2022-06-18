@@ -1155,6 +1155,11 @@
   resolved "https://registry.yarnpkg.com/@use-it/event-listener/-/event-listener-0.1.7.tgz#443a9b6df87f2f2961b74d42997ce723a7078623"
   integrity sha512-hgfExDzUU9uTRTPDCpw2s9jWTxcxmpJya3fK5ADpf5VDpSy8WYwY/kh28XE0tUcbsljeP8wfan48QvAQTSSa3Q==
 
+"@withshepherd/faker@^5.5.5":
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/@withshepherd/faker/-/faker-5.5.5.tgz#ed6f1d70913cca046b15c531c98d4d8958a7ed34"
+  integrity sha512-JgWi87zb13lrQxBc4A5my60mrZhGFgB6ixaQ1Tz2CBt5eg/6FahQiDFouI/IAW3TtX/Xeoj23AsiehQaUYddcw==
+
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
